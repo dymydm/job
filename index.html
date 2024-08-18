@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDA One, Inc</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <img src="{{ url_for('static', filename='images/ukraine-coat-of-arms.png') }}" alt="Герб України" class="icon">
+        </div>
+        <div class="center-header">
+            <h1>MDA One, Inc</h1>
+        </div>
+        <div class="right-header">
+            <img src="{{ url_for('static', filename='images/ukraine-flag.png') }}" alt="Прапор України" class="icon">
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Введення даних</h2>
+            <form id="dataForm">
+                <div class="form-group">
+                    <label for="date">Дата:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Адреса:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="amount">Сума:</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                
+                <button type="button" onclick="addRecord()" class="submit-button">Зберегти дані</button>
+            </form>
+        </section>
+
+        <section class="data-section">
+            <h2>Збережені дані</h2>
+            <table id="dataTable" class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Адреса</th>
+                        <th>Сума</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Дані будуть додаватися тут -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p id="paid-sum">Сума оплачених: 0.00 грн</p>
+        <p id="copyright">&copy; MDA One, Inc</p>
+        <p id="not-paid-sum">Сума неоплачених: 0.00 грн</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
